@@ -12,7 +12,7 @@ Flickrshow can display the latest images uploaded to Flickr in less than 40 char
         <p>Please enable Javascript to view this slideshow</p>
     </div>
     ...
-    <script src="http://www.flickrshow.co.uk/static/scripts/flickrshow-7.2.min.js"></script>
+    <script src="flickrshow-7.2.min.js"></script>
     <script>
         var robin = new flickrshow('robin');
     </script>
