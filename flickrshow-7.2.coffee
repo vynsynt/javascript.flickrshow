@@ -1,11 +1,8 @@
 ###
  *  @package    Flickrshow
- *  @subpackage Javascript
+ *  @subpackage Coffeecript
  *  @author     Ben Sekulowicz-Barclay
  *  @version    7.2
- *  
- *  Flickrshow is a Beseku thing licensed under a Creative Commons Attribution 3.0 
- *  Unported License. For more information visit http://www.flickrshow.com.
  ###
 
 flickrshow = (target, settings) ->
@@ -150,7 +147,7 @@ flickrshow = (target, settings) ->
     _.onClickPlay = () ->
         if _.constants.isPlaying is false
             _.constants.isPlaying = true
-            _.elements.buttons.childNodes[2].style.backgroundImage = 'url(' + _.constants.base_url + 'static/images/is.png)'
+            _.elements.buttons.childNodes[2].style.backgroundImage = 'url(' + _.constants.base_url + 'images/is.png)'
             
             execute = () -> _.onClickRight()
             
@@ -162,7 +159,7 @@ flickrshow = (target, settings) ->
         
         else
             _.constants.isPlaying = false
-            _.elements.buttons.childNodes[2].style.backgroundImage = 'url(' + _.constants.base_url + 'static/images/ip.png)'
+            _.elements.buttons.childNodes[2].style.backgroundImage = 'url(' + _.constants.base_url + 'images/ip.png)'
             
             window.clearInterval(_.constants.intervals['playing'])
             
@@ -328,7 +325,7 @@ flickrshow = (target, settings) ->
         _.elements.target = if typeof _.elements.target is 'string' then document.getElementById(_.elements.target) else _.elements.target
         
         # Add in the HTML elements we need
-        _.elements.target.innerHTML = '<div class="flickrshow-container" style="background:transparent;height:' + _.elements.target.offsetHeight + 'px;margin:0;overflow:hidden;padding:0;position:relative;width:' + _.elements.target.offsetWidth + 'px"><div class="flickrshow-loading" style="background:transparent url(' + _.constants.base_url + 'static/images/bg.png);border-radius:12px;height:24px;left:50%;margin:-12px 0 0 -120px;overflow:hidden;padding:0;position:absolute;top:50%;width:240px;-moz-border-radius:12px;-webkit-border-radius:12px"><div class="flickrshow-loading-bar" style="background:#000;border-radius:12px;height:24px;left:0;margin:0;padding:0;position:absolute;top:0;width:0;-moz-border-radius:12px;-webkit-border-radius:12px"></div></div><ul class="flickrshow-images" style="background:transparent;height:' + _.elements.target.offsetHeight + 'px;left:0;list-style:none;margin:0;padding:0;position:absolute;top:0;visibility:hidden;width:' + _.elements.target.offsetWidth + 'px"></ul><div class="flickrshow-buttons" style="background:transparent url(' + _.constants.base_url + 'static/images/bg.png);height:40px;margin:0;padding:0;position:absolute;top:' + _.elements.target.offsetHeight + 'px;width:' + _.elements.target.offsetWidth + 'px"><div class="flickrshow-buttons-left" style="background:#000 url(' + _.constants.base_url + 'static/images/il.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:auto;margin:0;padding:0;position:absolute;right:40px;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px"></div><div class="flickrshow-buttons-right" style="background:#000 url(' + _.constants.base_url + 'static/images/ir.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:auto;margin:0;padding:0;position:absolute;right:8px;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px"></div><div class="flickrshow-buttons-play" style="background:#000 url(' + _.constants.base_url + 'static/images/ip.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:8px;margin:0;padding:0;position:absolute;right:auto;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px;"></div><p class="flickrshow-buttons-title" style="background:#000;border-radius:12px;color:#FFF;cursor:pointer;font:normal normal 600 11px/24px helvetica,arial,sans-serif;height:24px;left:40px;margin:0;overflow:hidden;padding:0;position:absolute;right:auto;text-align:center;text-shadow:none;text-transform:capitalize;top:8px;width:' + (_.elements.target.offsetWidth - 112) + 'px;-moz-border-radius:12px;-webkit-border-radius:12px">&nbsp</p></div></div>'
+        _.elements.target.innerHTML = '<div class="flickrshow-container" style="background:transparent;height:' + _.elements.target.offsetHeight + 'px;margin:0;overflow:hidden;padding:0;position:relative;width:' + _.elements.target.offsetWidth + 'px"><div class="flickrshow-loading" style="background:transparent url(' + _.constants.base_url + 'images/bg.png);border-radius:12px;height:24px;left:50%;margin:-12px 0 0 -120px;overflow:hidden;padding:0;position:absolute;top:50%;width:240px;-moz-border-radius:12px;-webkit-border-radius:12px"><div class="flickrshow-loading-bar" style="background:#000;border-radius:12px;height:24px;left:0;margin:0;padding:0;position:absolute;top:0;width:0;-moz-border-radius:12px;-webkit-border-radius:12px"></div></div><ul class="flickrshow-images" style="background:transparent;height:' + _.elements.target.offsetHeight + 'px;left:0;list-style:none;margin:0;padding:0;position:absolute;top:0;visibility:hidden;width:' + _.elements.target.offsetWidth + 'px"></ul><div class="flickrshow-buttons" style="background:transparent url(' + _.constants.base_url + 'images/bg.png);height:40px;margin:0;padding:0;position:absolute;top:' + _.elements.target.offsetHeight + 'px;width:' + _.elements.target.offsetWidth + 'px"><div class="flickrshow-buttons-left" style="background:#000 url(' + _.constants.base_url + 'images/il.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:auto;margin:0;padding:0;position:absolute;right:40px;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px"></div><div class="flickrshow-buttons-right" style="background:#000 url(' + _.constants.base_url + 'images/ir.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:auto;margin:0;padding:0;position:absolute;right:8px;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px"></div><div class="flickrshow-buttons-play" style="background:#000 url(' + _.constants.base_url + 'images/ip.png) 50% 50% no-repeat;border-radius:12px;cursor:pointer;height:24px;left:8px;margin:0;padding:0;position:absolute;right:auto;top:8px;width:24px;-moz-border-radius:12px;-webkit-border-radius:12px;"></div><p class="flickrshow-buttons-title" style="background:#000;border-radius:12px;color:#FFF;cursor:pointer;font:normal normal 600 11px/24px helvetica,arial,sans-serif;height:24px;left:40px;margin:0;overflow:hidden;padding:0;position:absolute;right:auto;text-align:center;text-shadow:none;text-transform:capitalize;top:8px;width:' + (_.elements.target.offsetWidth - 112) + 'px;-moz-border-radius:12px;-webkit-border-radius:12px">&nbsp</p></div></div>'
         
         # Get the elements we need from the above as DOM objects
         _.elements.container = _.elements.target.childNodes[0]
@@ -423,7 +420,7 @@ flickrshow = (target, settings) ->
     # will later directly reference DOM elements
 
     _.constants =
-        base_url: 'http://www.flickrshow.com/'
+        base_url: 'http://www.flickrshow.co.uk/'
         intervals:[]
         imageCurrent:0
         imageLoaded:0
